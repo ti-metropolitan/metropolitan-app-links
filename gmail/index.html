@@ -1,26 +1,44 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Gmail — Colégio Metropolitan</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10284a">
+<title>Baixar Gmail | Colégio Metropolitan</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px 16px;display:grid;place-items:center;background:#f3f7fb;color:#10284a;font-family:Arial,Helvetica,sans-serif}
+.card{width:min(460px,100%);background:#fff;border:1px solid #dce6f0;border-radius:22px;padding:34px 26px;box-shadow:0 12px 34px rgba(16,40,74,.09);text-align:center}
+.brand{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ed1f3d;margin-bottom:22px}
+h1{font-size:29px;margin:0 0 10px}p{color:#607086;line-height:1.55;margin:0 0 22px}
+.status{font-size:13px;color:#607086;background:#f4f7fb;border-radius:10px;padding:12px;margin-bottom:18px}
+.actions{display:grid;gap:12px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:13px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px}
+.android{background:#10284a;color:white}.ios{background:#ed1f3d;color:white}
+.small{font-size:12px;color:#8794a4;margin-top:22px}
+</style>
+</head>
+<body><main class="card">
+<div class="brand">Colégio Metropolitan</div>
+<h1>Gmail</h1><p>E-mail do Google. Escolha a loja correspondente ao seu celular.</p>
+<div class="status" id="status">Identificando seu dispositivo…</div>
+<div class="actions">
+<a class="btn android" href="https://play.google.com/store/apps/details?id=com.google.android.gm">▶&nbsp; Baixar para Android · Google Play</a>
+<a class="btn ios" href="https://apps.apple.com/br/app/gmail-o-e-mail-do-google/id422689480">&nbsp; Baixar para iPhone/iPad · App Store</a>
+</div>
+<div class="small">Se preferir, toque no botão da loja do seu dispositivo.</div>
+</main>
 <script>
-(function () {
-  var ua = navigator.userAgent || "";
-  var android = /Android/i.test(ua);
-  var iphone = /iPhone|iPad|iPod/i.test(ua);
-  var play = "https://play.google.com/store/apps/details?id=com.google.android.gm";
-  var appStore = "https://apps.apple.com/br/app/gmail-o-e-mail-do-google/id422689480";
-  if (android) location.replace(play);
-  else if (iphone) location.replace(appStore);
-  else document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("links").innerHTML =
-      '<a href="' + play + '">Google Play (Android)</a><br><a href="' + appStore + '">App Store (iPhone)</a>';
-  });
+(function(){
+ var ua=navigator.userAgent||"";
+ var android=/Android/i.test(ua);
+ var apple=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+ var status=document.getElementById("status");
+ var target=android?"https://play.google.com/store/apps/details?id=com.google.android.gm":(apple?"https://apps.apple.com/br/app/gmail-o-e-mail-do-google/id422689480":null);
+ if(target){
+   status.textContent=android?"Android identificado. Abrindo Google Play…":"iPhone/iPad identificado. Abrindo App Store…";
+   window.setTimeout(function(){window.location.href=target;},900);
+ }else{
+   status.textContent="Não identificamos um celular. Escolha abaixo a loja do seu dispositivo.";
+ }
 })();
 </script>
-<style>body{font-family:Arial,sans-serif;text-align:center;padding:48px 20px;color:#10284a}a{display:inline-block;margin:12px;color:#10284a}</style>
-</head>
-<body><h1>Gmail</h1><p>Redirecionando para a loja do seu celular…</p><div id="links"></div></body>
-</html>
+</body></html>
