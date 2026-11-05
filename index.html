@@ -1,6 +1,47 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aplicativos — Colégio Metropolitan</title></head>
-<body style="font-family:Arial,sans-serif;color:#10284a;text-align:center;padding:40px 16px">
-<h1>Aplicativos do Colégio Metropolitan</h1><p>Escolha o aplicativo:</p>
-<p><a href="./sponte/">Sponte</a></p><p><a href="./plurall/">Plurall</a></p><p><a href="./gmail/">Gmail</a></p>
-</body></html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10284a">
+<title>Aplicativos | Colégio Metropolitan</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f4f8fc 0%,#fff 100%);color:#10284a;display:flex;align-items:center;justify-content:center;padding:36px 18px}
+main{width:min(980px,100%);text-align:center}
+.brand{font-size:13px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#ed1f3d;margin-bottom:14px}
+h1{font-size:clamp(27px,4vw,38px);margin:0 0 12px;color:#10284a}
+.intro{font-size:16px;line-height:1.6;color:#53657a;margin:0 auto 34px;max-width:570px}
+.apps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.app{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:235px;padding:26px 18px;background:#fff;border:1px solid #dbe5ef;border-radius:20px;text-decoration:none;color:#10284a;box-shadow:0 8px 24px rgba(16,40,74,.07);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.app:hover{transform:translateY(-4px);border-color:#a9bfd5;box-shadow:0 14px 30px rgba(16,40,74,.12)}
+.app img{width:104px;height:104px;object-fit:contain;border-radius:23px;margin-bottom:17px}
+.app strong{font-size:19px;margin-bottom:8px}
+.app span{font-size:13px;color:#718096}
+.footer{font-size:12px;color:#8291a2;margin-top:28px}
+@media(max-width:680px){body{padding:28px 16px}.apps{grid-template-columns:1fr;gap:14px}.app{min-height:150px;flex-direction:row;justify-content:flex-start;text-align:left;padding:18px 22px}.app img{width:76px;height:76px;margin:0 18px 0 0;border-radius:17px}.app strong{display:block}.app span{display:block}.app .copy{display:flex;flex-direction:column;gap:4px}}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">Colégio Metropolitan</div>
+<h1>Aplicativos da escola</h1>
+<p class="intro">Acesse os aplicativos utilizados pelo Colégio Metropolitan. Toque no aplicativo desejado para baixar na loja do seu celular.</p>
+<section class="apps" aria-label="Aplicativos">
+<a class="app" href="./sponte/" aria-label="Baixar Sponte">
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0b/24/86/0b24867d-e57b-25fd-a290-b140c45fee0f/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/1200x630wa.png" alt="Ícone do aplicativo Sponte">
+<span class="copy"><strong>Sponte</strong><span>Agenda e comunicação escolar</span></span>
+</a>
+<a class="app" href="./plurall/" aria-label="Baixar Plurall">
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/0a/95/010a9507-0e41-1424-a8c3-55ef46a335e9/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/640x640bb.webp" alt="Ícone do aplicativo Plurall">
+<span class="copy"><strong>Plurall</strong><span>Plataforma de estudos</span></span>
+</a>
+<a class="app" href="./gmail/" aria-label="Baixar Gmail">
+<img src="https://images.macrumors.com/t/x6elVK6gMH6VS6EKP6SrKodTWHI%3D/1600x900/smart/article-new/2022/07/gmail-icon.png" alt="Ícone do aplicativo Gmail">
+<span class="copy"><strong>Gmail</strong><span>E-mail do Google</span></span>
+</a>
+</section>
+<p class="footer">Colégio Metropolitan · Aplicativos oficiais</p>
+</main>
+</body>
+</html>
