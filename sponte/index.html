@@ -1,54 +1,51 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10284a">
 <title>Sponte | Colégio Metropolitan</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;padding:24px 16px;display:grid;place-items:center;background:#f3f7fb;color:#10284a;font-family:Arial,Helvetica,sans-serif}
 .card{width:min(460px,100%);background:#fff;border:1px solid #dce6f0;border-radius:22px;padding:32px 26px;box-shadow:0 12px 34px rgba(16,40,74,.09);text-align:center}
-.brand{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ed1f3d;margin-bottom:22px}
-.logo{width:112px;height:112px;display:block;margin:0 auto 14px}
-h1{font-size:27px;margin:0 0 10px}p{color:#607086;line-height:1.55;margin:0 0 22px}
-.status{font-size:13px;color:#607086;background:#f4f7fb;border-radius:10px;padding:12px;margin-bottom:18px}
+.brand{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ed1f3d;margin-bottom:24px}
+.logo-wrap{width:124px;height:124px;margin:0 auto 18px;display:grid;place-items:center}
+.logo{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+h1{font-size:28px;margin:0 0 9px}
+p{color:#607086;line-height:1.55;margin:0 0 22px}
+.status{font-size:13px;color:#607086;background:#f4f7fb;border-radius:10px;padding:12px;margin-bottom:18px;line-height:1.45}
 .actions{display:grid;gap:12px}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:13px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px}
-.android{background:#10284a;color:white}.ios{background:#ed1f3d;color:white}
-.small{font-size:12px;color:#8794a4;margin-top:22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px}
+.android{background:#10284a;color:#fff}
+.ios{background:#ed1f3d;color:#fff}
+.btn:focus-visible{outline:3px solid #8bb8e8;outline-offset:3px}
+.small{font-size:12px;color:#8794a4;margin-top:20px}
 </style>
 </head>
-<body><main class="card">
+<body>
+<main class="card">
 <div class="brand">Colégio Metropolitan</div>
-<svg class="logo" viewBox="0 0 252 252" role="img" aria-label="Logo do aplicativo Sponte">
-<rect x="2" y="2" width="248" height="248" rx="52" fill="#6900b8"/>
-<rect x="47" y="41" width="158" height="166" rx="18" fill="#260044"/>
-<path d="M157 72c-12-12-34-17-53-11-22 7-30 29-21 47 8 16 25 22 44 29 18 6 29 12 27 23-3 13-19 18-34 16-14-2-26-9-35-19l-18 23c14 17 36 26 59 27 36 1 64-17 68-48 4-31-19-45-51-56-18-6-30-11-28-20 2-8 13-11 25-10 12 1 22 5 30 13z" fill="#fff"/>
-<rect x="167" y="2" width="14" height="22" rx="6" fill="#fff"/>
-<circle cx="44" cy="76" r="4" fill="#fff"/><circle cx="44" cy="126" r="4" fill="#fff"/><circle cx="44" cy="176" r="4" fill="#fff"/>
-</svg>
+<div class="logo-wrap"><img class="logo" src="https://play-lh.googleusercontent.com/8QgRRZMzigf8-9-9FaqHtYh_srIdP8J8TdGngE52-FtymDt_5zoDOZ29P-00CIUJxu0b0J8qVc_Fa8gxBClQSg%3Dw240-h480" alt="Ícone oficial do aplicativo Sponte" width="124" height="124"></div>
 <h1>Sponte</h1>
-<p>Agenda e comunicação escolar. Escolha a loja correspondente ao seu celular.</p>
-<div class="status" id="status">Escolha sua loja para baixar o aplicativo Sponte.</div>
+<p>Agenda e comunicação escolar do Colégio Metropolitan.</p>
+<div class="status" id="status">Escolha a loja do seu celular para baixar o aplicativo.</div>
 <div class="actions">
-<a class="btn android" href="https://play.google.com/store/apps/details?id=br.com.sponte.sponteapp">▶&nbsp; Baixar para Android · Google Play</a>
-<a class="btn ios" href="https://apps.apple.com/br/app/sponte-agenda-plus/id1636538135">&nbsp; Baixar para iPhone · App Store</a>
+<a class="btn android" href="https://play.google.com/store/apps/details?id=br.com.sponte.sponteapp"><span aria-hidden="true">▶</span> Baixar para Android · Google Play</a>
+<a class="btn ios" href="https://apps.apple.com/br/app/sponte-agenda-plus/id1636538135"><span aria-hidden="true">●</span> Baixar para iPhone · App Store</a>
 </div>
-<div class="small">Se preferir, toque no botão da loja do seu dispositivo.</div>
+<div class="small">Selecione o botão correspondente ao seu aparelho.</div>
 </main>
 <script>
 (function(){
  var ua=navigator.userAgent||"";
  var android=/Android/i.test(ua);
- var apple=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+ var iphone=/iPhone|iPod/i.test(ua);
  var status=document.getElementById("status");
- var target=android?"https://play.google.com/store/apps/details?id=br.com.sponte.sponteapp":(apple?"https://apps.apple.com/br/app/sponte-agenda-plus/id1636538135":null);
- if(target){
-   status.textContent=android?"Android identificado. Abrindo Google Play em instantes…":"iPhone identificado. Abrindo App Store em instantes…";
-   window.setTimeout(function(){window.location.href=target;},2500);
- }else{
-   status.textContent="Não identificamos um celular. Escolha abaixo a loja do seu dispositivo.";
- }
+ if(android){status.textContent="Detectamos um aparelho Android. Use o botão Google Play acima.";}
+ else if(iphone){status.textContent="Detectamos um iPhone. Use o botão App Store acima.";}
+ else{status.textContent="Escolha manualmente a loja correspondente ao seu celular.";}
 })();
 </script>
-</body></html>
+</body>
+</html>
