@@ -1,44 +1,51 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10284a">
-<title>Baixar Plurall | Colégio Metropolitan</title>
+<title>Plurall | Colégio Metropolitan</title>
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px 16px;display:grid;place-items:center;background:#f3f7fb;color:#10284a;font-family:Arial,Helvetica,sans-serif}
-.card{width:min(460px,100%);background:#fff;border:1px solid #dce6f0;border-radius:22px;padding:34px 26px;box-shadow:0 12px 34px rgba(16,40,74,.09);text-align:center}
-.brand{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ed1f3d;margin-bottom:22px}
-h1{font-size:29px;margin:0 0 10px}p{color:#607086;line-height:1.55;margin:0 0 22px}
-.status{font-size:13px;color:#607086;background:#f4f7fb;border-radius:10px;padding:12px;margin-bottom:18px}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:24px 16px;display:grid;place-items:center;background:#f3f7fb;color:#10284a;font-family:Arial,Helvetica,sans-serif}
+.card{width:min(460px,100%);background:#fff;border:1px solid #dce6f0;border-radius:22px;padding:32px 26px;box-shadow:0 12px 34px rgba(16,40,74,.09);text-align:center}
+.brand{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ed1f3d;margin-bottom:24px}
+.logo-wrap{width:124px;height:124px;margin:0 auto 18px;display:grid;place-items:center}
+.logo{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+h1{font-size:28px;margin:0 0 9px}
+p{color:#607086;line-height:1.55;margin:0 0 22px}
+.status{font-size:13px;color:#607086;background:#f4f7fb;border-radius:10px;padding:12px;margin-bottom:18px;line-height:1.45}
 .actions{display:grid;gap:12px}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:13px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px}
-.android{background:#10284a;color:white}.ios{background:#ed1f3d;color:white}
-.small{font-size:12px;color:#8794a4;margin-top:22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px}
+.android{background:#10284a;color:#fff}
+.ios{background:#ed1f3d;color:#fff}
+.btn:focus-visible{outline:3px solid #8bb8e8;outline-offset:3px}
+.small{font-size:12px;color:#8794a4;margin-top:20px}
 </style>
 </head>
-<body><main class="card">
+<body>
+<main class="card">
 <div class="brand">Colégio Metropolitan</div>
-<h1>Plurall</h1><p>Plataforma de aprendizagem. Escolha a loja correspondente ao seu celular.</p>
-<div class="status" id="status">Identificando seu dispositivo…</div>
+<div class="logo-wrap"><img class="logo" src="https://play-lh.googleusercontent.com/qVpiv9zCf-dn0EhZ0-3QT_Ig0KI92wq5XK_eUupCg4-pP6tDM5XCfQMrKa33PfY5_6xfyC4jcxDhoPnnmIj6xA%3Dw240-h480" alt="Ícone oficial do aplicativo Plurall" width="124" height="124"></div>
+<h1>Plurall</h1>
+<p>Plataforma de aprendizagem utilizada pela comunidade escolar.</p>
+<div class="status" id="status">Escolha a loja do seu celular para baixar o aplicativo.</div>
 <div class="actions">
-<a class="btn android" href="https://play.google.com/store/apps/details?id=com.kongros.plurall">▶&nbsp; Baixar para Android · Google Play</a>
-<a class="btn ios" href="https://apps.apple.com/br/app/plurall-somos-educa%C3%A7%C3%A3o/id900660848">&nbsp; Baixar para iPhone/iPad · App Store</a>
+<a class="btn android" href="https://play.google.com/store/apps/details?id=com.kongros.plurall"><span aria-hidden="true">▶</span> Baixar para Android · Google Play</a>
+<a class="btn ios" href="https://apps.apple.com/br/app/plurall-somos-educa%C3%A7%C3%A3o/id900660848"><span aria-hidden="true">●</span> Baixar para iPhone · App Store</a>
 </div>
-<div class="small">Se preferir, toque no botão da loja do seu dispositivo.</div>
+<div class="small">Selecione o botão correspondente ao seu aparelho.</div>
 </main>
 <script>
 (function(){
  var ua=navigator.userAgent||"";
  var android=/Android/i.test(ua);
- var apple=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+ var iphone=/iPhone|iPod/i.test(ua);
  var status=document.getElementById("status");
- var target=android?"https://play.google.com/store/apps/details?id=com.kongros.plurall":(apple?"https://apps.apple.com/br/app/plurall-somos-educa%C3%A7%C3%A3o/id900660848":null);
- if(target){
-   status.textContent=android?"Android identificado. Abrindo Google Play…":"iPhone/iPad identificado. Abrindo App Store…";
-   window.setTimeout(function(){window.location.href=target;},900);
- }else{
-   status.textContent="Não identificamos um celular. Escolha abaixo a loja do seu dispositivo.";
- }
+ if(android){status.textContent="Detectamos um aparelho Android. Use o botão Google Play acima.";}
+ else if(iphone){status.textContent="Detectamos um iPhone. Use o botão App Store acima.";}
+ else{status.textContent="Escolha manualmente a loja correspondente ao seu celular.";}
 })();
 </script>
-</body></html>
+</body>
+</html>
