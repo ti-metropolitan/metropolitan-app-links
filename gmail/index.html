@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Gmail — Colégio Metropolitan</title>
+<script>
+(function () {
+  var ua = navigator.userAgent || "";
+  var android = /Android/i.test(ua);
+  var iphone = /iPhone|iPad|iPod/i.test(ua);
+  var play = "https://play.google.com/store/apps/details?id=com.google.android.gm";
+  var appStore = "https://apps.apple.com/br/app/gmail-o-e-mail-do-google/id422689480";
+  if (android) location.replace(play);
+  else if (iphone) location.replace(appStore);
+  else document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("links").innerHTML =
+      '<a href="' + play + '">Google Play (Android)</a><br><a href="' + appStore + '">App Store (iPhone)</a>';
+  });
+})();
+</script>
+<style>body{font-family:Arial,sans-serif;text-align:center;padding:48px 20px;color:#10284a}a{display:inline-block;margin:12px;color:#10284a}</style>
+</head>
+<body><h1>Gmail</h1><p>Redirecionando para a loja do seu celular…</p><div id="links"></div></body>
+</html>
